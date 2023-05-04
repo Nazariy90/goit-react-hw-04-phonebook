@@ -1,19 +1,26 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import Filter from './filter/Filter';
-import ContactForm from './contactForm/ContactForm';
-import ContactList from './contactList/ContactList';
+import { Filter } from './filter/Filter';
+import { ContactForm } from './contactForm/ContactForm';
+import { ContactList } from './contactList/ContactList';
+
+// export const App = () => {
+//   const [contacts, setContacts] = useState([]);
+//   const [filter, setFilter] = useState('');
+// };
 
 export class App extends React.Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  //   useEffect(() => {
+  //     const storedContacts = localStorage.getItem('contacts');
+  //     if (storedContacts) {
+  //       setContacts(JSON.parse(storedContacts));
+  //   }
+  // }, []);
 
   componentDidMount() {
     const storedContacts = localStorage.getItem('contacts');
@@ -22,7 +29,11 @@ export class App extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  // useEffect(() => {
+  //     localStorage.setItem('contacts', JSON.stringify(contacts));
+  // },[contacts])
+
+  componentDidUpdate(prevState) {
     if (prevState.contacts !== this.state.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
