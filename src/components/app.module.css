@@ -1,0 +1,22 @@
+.wrapper {
+    border: 2px solid blue;
+    display: flex;
+    padding-left: 30px;
+}
+
+
+
+.title {
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 10px 20px;
+}
