@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import css from '../app.module.css';
 
 export const ContactForm = props => {
@@ -59,4 +60,8 @@ export const ContactForm = props => {
       </button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
 };
